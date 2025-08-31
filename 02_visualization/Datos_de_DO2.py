@@ -5,10 +5,15 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import plotly.express as px
 import plotly.graph_objects as go
+import os
 
 warnings.filterwarnings('ignore')
 
-datos = pd.read_excel('WHO_Limpio.xlsx')
+# Construir la ruta correcta relativa al script
+base_path = os.path.dirname(__file__)   # carpeta donde está el .py
+file_path = os.path.join(base_path, "..", "datasets", "WHO_Limpio.xlsx")
+
+datos = pd.read_excel(file_path)
 
 
 #3 filtrar a europa (año 2010-2022) # Corrected the year range in the comment
